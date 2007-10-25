@@ -2,23 +2,25 @@
 
 Name:           argus-clients
 Version:        2.0.6.fixes.1
-Release:        %mkrel 1
+Release:        %mkrel 2
 Epoch:          0
 Summary:        Client tools for argus network audit
 License:        GPL
 Group:          Networking/Other
 URL:            http://qosient.com/argus/
-Source0:        ftp://ftp.qosient.com/dev/argus-2.0/%{name}-%{version}.tar.bz2
-Source1:        http://www.intrusion-lab.net/downloads/raprelude-%{raprelude_version}.tar.bz2
+Source0:        http://qosient.com/argus/src/argus-clients-2.0.6.tar.gz
+Source1:        http://qosient.com/argus/src/argus-clients-2.0.6.tar.gz.asc
+Source2:        http://qosient.com/argus/src/argus-clients-2.0.6.tar.gz.md5
+Source3:        http://www.intrusion-lab.net/downloads/raprelude-%{raprelude_version}.tar.bz2
 Patch0:         argus-clients-2.0.6.fixes.1-makefile.patch
 Patch1:         argus-clients-2.0.6.fixes.1-build.patch
 Patch2:         argus-clients-2.0.6.fixes.1-print.patch
 Patch3:         argus-clients-2.0.6.fixes.1-raprelude-Makefile.in.patch
 BuildRequires:  bison
-BuildRequires:  flex-reentrant
-BuildRequires:  libprelude-devel
-BuildRequires:  libsasl-devel
+BuildRequires:  flex
 BuildRequires:  ncurses-devel
+BuildRequires:  prelude-devel
+BuildRequires:  libsasl-devel
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 %description
@@ -46,7 +48,7 @@ other prelude sensors. Prelude uses IDMEF format to log the events.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
-%setup -q -T -D -a 1
+%setup -q -T -D -a 3
 pushd raprelude-%{raprelude_version}
 %patch3 -p1
 ./apply.sh << EOF
@@ -59,13 +61,13 @@ popd
 
 %build
 export CPPFLAGS="-I%{_includedir}/sasl"
-%configure2_5x --with-sasl
+%{configure2_5x} --with-sasl
 %{make}
 
 %install
 %{__rm} -rf %{buildroot}
 %{makeinstall_std}
-%{__rm} -rf %{buildroot}%{_libdir}
+%{__rm} -r %{buildroot}%{_libdir}
 
 pushd raprelude-%{raprelude_version}
 %{__mkdir_p} %{buildroot}%{_sysconfdir}/prelude/profile/raprelude
@@ -111,5 +113,3 @@ popd
 %attr(0755,root,root) %{_bindir}/raprelude
 %{_mandir}/man1/raprelude.1*
 %config(noreplace) %{_sysconfdir}/prelude/profile/raprelude/class.conf
-
-
