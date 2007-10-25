@@ -2,7 +2,7 @@
 
 Name:           argus-clients
 Version:        2.0.6.fixes.1
-Release:        %mkrel 2
+Release:        %mkrel 3
 Epoch:          0
 Summary:        Client tools for argus network audit
 License:        GPL
@@ -44,11 +44,11 @@ together with the other hostile network events that are detected by
 other prelude sensors. Prelude uses IDMEF format to log the events.
 
 %prep
-%setup -q
+%setup -q -n argus-clients-2.0.6
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
-%setup -q -T -D -a 3
+%setup -q -n argus-clients-2.0.6 -T -D -a 3
 pushd raprelude-%{raprelude_version}
 %patch3 -p1
 ./apply.sh << EOF
