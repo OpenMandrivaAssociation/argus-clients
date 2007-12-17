@@ -21,7 +21,6 @@ BuildRequires:  flex
 BuildRequires:  ncurses-devel
 BuildRequires:  prelude-devel
 BuildRequires:  libsasl-devel
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 %description
 Clients to the argus probe which process and display information.
