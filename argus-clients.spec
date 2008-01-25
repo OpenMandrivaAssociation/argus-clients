@@ -2,10 +2,10 @@
 
 Name:           argus-clients
 Version:        2.0.6.fixes.1
-Release:        %mkrel 3
+Release:        %mkrel 4
 Epoch:          0
 Summary:        Client tools for argus network audit
-License:        GPL
+License:        GPLv2+
 Group:          Networking/Other
 URL:            http://qosient.com/argus/
 Source0:        http://qosient.com/argus/src/argus-clients-2.0.6.tar.gz
