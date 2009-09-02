@@ -2,7 +2,7 @@
 
 Name:           argus-clients
 Version:        2.0.6.fixes.1
-Release:        %mkrel 6
+Release:        %mkrel 7
 Epoch:          0
 Summary:        Client tools for argus network audit
 License:        GPLv2+
