@@ -67,7 +67,7 @@ export CPPFLAGS="-I%{_includedir}/sasl"
 %install
 %{__rm} -rf %{buildroot}
 %{makeinstall_std}
-%{__rm} -r %{buildroot}%{_libdir}
+%{__rm} -rf %{buildroot}%{_libdir}
 
 pushd raprelude-%{raprelude_version}
 %{__mkdir_p} %{buildroot}%{_sysconfdir}/prelude/profile/raprelude
