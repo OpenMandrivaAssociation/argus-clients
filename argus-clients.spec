@@ -1,12 +1,12 @@
 Name:           argus-clients
-Version:        3.0.2
-Release:        %mkrel 3
+Version:        3.0.4
+Release:        %mkrel 1
 Epoch:          0
 Summary:        Client tools for argus network audit
 License:        GPLv2+
 Group:          Networking/Other
 URL:            http://qosient.com/argus/
-Source0:        http://qosient.com/argus/src/%{name}-%{version}.tar.gz
+Source0:        http://qosient.com/argus/dev/%{name}-%{version}.tar.gz
 Patch0:		argus-clients-3.0.2-fix-str-fmt.patch
 BuildRequires:  bison
 BuildRequires:  flex
@@ -42,3 +42,6 @@ rm -rf %{buildroot}%_docdir
 %attr(0755,root,root) %{_sbindir}/*
 %{_prefix}/argus
 %{_mandir}/man?/*
+%{_includedir}/argus/*
+%{_libdir}/*
+
