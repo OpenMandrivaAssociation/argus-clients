@@ -24,6 +24,9 @@ Group:		Development/C
 Provides:	%{name}-devel = %{version}
 Requires:       %{name} = %{version}-%{release}
 
+%description	devel
+Static library and header files for the %{name}
+
 %prep
 %setup -q -n %name-%version
 
