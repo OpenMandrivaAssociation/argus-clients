@@ -1,6 +1,6 @@
 Name:           argus-clients
-Version:        3.0.4
-Release:        %mkrel 2
+Version:        3.0.6
+Release:        %mkrel 1
 Epoch:          0
 Summary:        Client tools for argus network audit
 License:        GPLv2+
@@ -13,14 +13,19 @@ BuildRequires:  flex
 BuildRequires:  ncurses-devel
 BuildRequires:  libsasl-devel
 BuildRequires:	mysql-devel
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 %description
 Clients to the argus probe which process and display information.
 
+
+%package	devel
+Summary:        Static library and header files for the %{name}
+Group:		Development/C
+Provides:	%{name}-devel = %{version}
+Requires:       %{name} = %{version}-%{release}
+
 %prep
 %setup -q -n %name-%version
-%patch0 -p0
 
 %build
 %configure2_5x
@@ -32,16 +37,13 @@ make
 
 rm -rf %{buildroot}%_docdir
 
-%clean
-%{__rm} -rf %{buildroot}
-
 %files
 %defattr(0644,root,root,0755)
-%doc ChangeLog COPYING CREDITS INSTALL MANIFEST README VERSION doc support
+#%doc ChangeLog COPYING CREDITS INSTALL MANIFEST README VERSION doc support
 %attr(0755,root,root) %{_bindir}/*
-%attr(0755,root,root) %{_sbindir}/*
 %{_prefix}/argus
 %{_mandir}/man?/*
+
+%files devel
 %{_includedir}/argus/*
 %{_libdir}/*
-
