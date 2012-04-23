@@ -49,4 +49,5 @@ rm -rf %{buildroot}%_docdir
 
 %files devel
 %{_includedir}/argus/*
-%{_libdir}/*
+%{_libdir}/*.a
+%{_libdir}/pkgconfig/%{name}.pc
