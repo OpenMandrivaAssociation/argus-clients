@@ -1,2 +1,4 @@
+removed_sources:
+  argus-clients-3.0.7.3.tar.gz: d3af66795a19f2f4f4806f357b39dbdfb676f34e
 sources:
-  "argus-clients-3.0.7.3.tar.gz": d3af66795a19f2f4f4806f357b39dbdfb676f34e
+  argus-clients-3.0.7.7.tar.gz: 6ecae46b9f886f97ce12f77b58ceaab2871cdd39

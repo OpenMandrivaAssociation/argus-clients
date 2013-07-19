@@ -1,5 +1,5 @@
 Name:           argus-clients
-Version:        3.0.7.3
+Version:        3.0.7.7
 Release:        1
 Epoch:          0
 Summary:        Client tools for argus network audit
@@ -51,3 +51,4 @@ rm -rf %{buildroot}%_docdir
 %{_includedir}/argus/*
 %{_libdir}/*.a
 %{_libdir}/pkgconfig/%{name}.pc
+
