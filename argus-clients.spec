@@ -1,5 +1,5 @@
 Name:           argus-clients
-Version:        3.0.7.11
+Version:        3.0.7.15
 Release:        1
 Epoch:          0
 Summary:        Client tools for argus network audit
