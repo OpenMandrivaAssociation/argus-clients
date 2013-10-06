@@ -35,7 +35,6 @@ Static library and header files for the %{name}
 make
 
 %install
-%{__rm} -rf %{buildroot}
 %{makeinstall_std}
 
 rm -rf %{buildroot}%_docdir
