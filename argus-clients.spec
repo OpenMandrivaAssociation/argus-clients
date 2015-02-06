@@ -1,6 +1,6 @@
 Name:           argus-clients
 Version:        3.0.7.7
-Release:        1
+Release:        2
 Epoch:          0
 Summary:        Client tools for argus network audit
 License:        GPLv2+
