@@ -5,7 +5,7 @@ Epoch:          0
 Summary:        Client tools for argus network audit
 License:        GPLv2+
 Group:          Networking/Other
-URL:            http://qosient.com/argus/
+URL:            https://qosient.com/argus/
 Source0:        http://qosient.com/argus/dev/%{name}-%{version}.tar.gz
 Patch0:		argus-clients-3.0.2-fix-str-fmt.patch
 BuildRequires:  bison
